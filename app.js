@@ -39,8 +39,8 @@ async function convert() {
     let converted = (amt * rate).toFixed(2)
 
 
-    let apiDate = new Date(data.date);
-    let day = String(apiDate.getDate() + 1).padStart(2,"0");
+    let apiDate = new Date();
+    let day = String(apiDate.getDate()).padStart(2,"0");
     let month = String(apiDate.getMonth() + 1).padStart(2,"0");
     let year = apiDate.getFullYear();
     let formattedDate = `${day}-${month}-${year}`;
@@ -49,5 +49,6 @@ async function convert() {
     (Date: ${formattedDate})`
 
     document.getElementById("amount").value="";
+
 
 }
